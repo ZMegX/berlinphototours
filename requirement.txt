@@ -1,2 +1,0 @@
-Flask~=3.1 # (Any version starting with "3.")
-Gunicorn
