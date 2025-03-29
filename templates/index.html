@@ -8,33 +8,23 @@
 
         <!-- Full-width images with number text -->
         <div class="mySlides-indexPage">
-          <div class="numbertext">1 / 6</div>
-            <img src="img_woods_wide.jpg" style="width:100%">
+          <div class="numbertext">1 / 4</div>
+          <img src="" id="slide1" alt="Photo Tours Berlin photoshoot">
         </div>
 
         <div class="mySlides-indexPage">
-          <div class="numbertext">2 / 6</div>
-            <img src="img_5terre_wide.jpg" style="width:100%">
+          <div class="numbertext">2 / 4</div>
+          <img src="" id="slide2" alt="Photo Tours Berlin photoshoot">
         </div>
 
         <div class="mySlides-indexPage">
-          <div class="numbertext">3 / 6</div>
-            <img src="img_mountains_wide.jpg" style="width:100%">
+          <div class="numbertext">3 / 4</div>
+          <img src="" id="slide3" alt="Photo Tours Berlin photoshoot">
         </div>
 
         <div class="mySlides-indexPage">
-          <div class="numbertext">4 / 6</div>
-            <img src="img_lights_wide.jpg" style="width:100%">
-        </div>
-
-        <div class="mySlides-indexPage">
-          <div class="numbertext">5 / 6</div>
-            <img src="img_nature_wide.jpg" style="width:100%">
-        </div>
-
-        <div class="mySlides-indexPage">
-          <div class="numbertext">6 / 6</div>
-            <img src="img_snow_wide.jpg" style="width:100%">
+          <div class="numbertext">4 / 4</div>
+          <img src="" id="slide4" alt="Photo Tours Berlin">
         </div>
 
         <!-- Next and previous buttons -->
@@ -60,12 +50,6 @@
           <div class="column">
             <img class="demo cursor" src="img_lights.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
           </div>
-          <div class="column">
-            <img class="demo cursor" src="img_nature.jpg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
-          </div>
-          <div class="column">
-            <img class="demo cursor" src="img_snow.jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
-          </div>
         </div>
       </div>
       <p>
@@ -73,6 +57,11 @@
         Elevate your photobook with us by booking right now.
       </p>
       <script>
+        document.getElementById('slide1').src = 'https://picsum.photos/id/237/200/300';
+        document.getElementById('slide2').src = 'https://picsum.photos/id/237/200/300';
+        document.getElementById('slide3').src = 'https://picsum.photos/id/237/200/300';
+        document.getElementById('slide4').src = 'https://picsum.photos/id/237/200/300';
+
         let slideIndex = 1;
         showSlides(slideIndex);
 
