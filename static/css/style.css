@@ -8,7 +8,7 @@
   }
   
   /* Hide the images by default */
-  .mySlides {
+  .mySlides-indexPage {
     display: none;
   }
   
@@ -36,8 +36,9 @@
   
   /* Position the "next button" to the right */
   .next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
+    right: 350px;
+    position: absolute;
+    border-radius: 2px 0 0 2px;
   }
   
   /* On hover, add a black background color with a little bit see-through */
@@ -55,26 +56,10 @@
     top: 0;
   }
   
-  /* Container for image text */
-  .caption-container {
-    display: none;
-    text-align: center;
-    background-color: #222;
-    padding: 2px 16px;
-    color: white;
-  }
-  
   .row:after {
     content: "";
     display: table;
     clear: both;
-  }
-  
-  /* Six columns side by side */
-  .column {
-    display: none;
-    float: left;
-    width: 16.66%;
   }
   
   /* Add a transparency effect for thumnbail images */
