@@ -5,7 +5,47 @@ function headerImage (){
     res.innerHTML = "Image Element added.";
 
 } 
+    //mainhtml code
 
+    let slideIndex = 1;
+      showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("demo");
+      let captionText = document.getElementById("caption");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+      captionText.innerHTML = dots[slideIndex-1].alt;
+    } 
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowRight") {
+        plusSlides(1);
+      } else if (event.key === "ArrowLeft") {
+        plusSlides(-1);
+      }
+    });
+//contact form submission event listener
 document.getElementById('contactForm').addEventListener('submit', function (event) {
     event.preventDefault();
     
@@ -55,6 +95,6 @@ document.getElementById('contactForm').addEventListener('submit', function (even
     // If form is valid, you can submit it or perform any other action
     if (isValid) {
         alert('Form submitted successfully!');
-        // You can also submit the form here using AJAX or similar methods
     }
     });
+
