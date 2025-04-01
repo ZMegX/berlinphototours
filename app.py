@@ -36,9 +36,9 @@ def products():
     return render_template("products.html", products=filtered_items)
 
 
-@app.route('/item/<sku>')
+@app.route('/tours/<sku>')
 def item(sku):
-    return render_template("item.html", product=items_in_stock[sku], sku=sku)
+    return render_template("tours.html", product=items_in_stock[sku], sku=sku)
 
 
 @app.route('/order/<sku>', methods=["POST"])
@@ -50,7 +50,7 @@ def order(sku):
     else:
         return render_template("item_not_in_stock.html")
 
-@app.route('/admin/item/<sku>', methods=["GET"])
+@app.route('/admin/tours/<sku>', methods=["GET"])
 def edit_item(sku):
     print(items_in_stock)
     
@@ -63,7 +63,7 @@ def edit_item(sku):
 
     return render_template("edit_item.html", product=product, sku=sku)
 
-@app.route('/admin/item/<sku>', methods=["POST"])
+@app.route('/admin/tours/<sku>', methods=["POST"])
 def set_item(sku):
     existing_item = items_in_stock.get(sku)
     if existing_item:
@@ -90,7 +90,7 @@ def set_item(sku):
         "amount": amount,
         "image_url": image_url,
     }
-    return redirect(url_for("products"))
+    return redirect(url_for("tours"))
 
 @app.route("/")
 def index():
