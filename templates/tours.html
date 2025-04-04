@@ -2,28 +2,14 @@
 
 {% block main %}
       <h2>Book your next experience with us</h2>
-      <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-      <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-      <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">hello</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
+      {% for key, value in data.items() %}
+      <h1>{{ product['name'] }}</h1>
+
+  <figure class="figure">
+    <img src="{{ product['image_url']}}" alt="{{ product['description'] }}">
+    <figcaption class="figure-caption">
+      <strong>{{ product['description'] }} - €{{ product['price'] }} (Only {{ product['amount'] }} remaining)</strong>
+    </figcaption>
+  </figure>
+
 {% endblock %}
