@@ -3,7 +3,7 @@ from flask import render_template, request, redirect, url_for, session
 
 app = Flask(__name__)
 
-items_in_stock = {
+tours = {
     1: {
         "name": "Discover the street art in Berlin",
         "description": "Discover the most beautiful street art in Berlin, from local artists to international masters.",
@@ -27,38 +27,15 @@ items_in_stock = {
     }
 
 }
-@app.route('/products/')
-def products():
-    search_term = request.args.get("q", "")
-    filtered_items = []
-    for sku, item in items_in_stock.items():
-        if search_term.lower() in item["description"].lower():
-            filtered_items.append((sku, item))
-    return render_template("product.html", products=filtered_items)
-
-
-@app.route('/tours/<sku>')
-def item(sku):
-    return render_template("tours.html", items_in_stock=items_in_stock)
-
-
-@app.route('/order/<sku>', methods=["POST"])
-def order(sku):
-    item = items_in_stock[sku]
-    if item["amount"] > 0:
-        item["amount"] -= 1
-        return render_template("confirmation.html")
-    else:
-        return render_template("item_not_in_stock.html")
+@app.route('/tours')
+def show_tours():
+    return render_template('tours.html', tours=tours)
 
 
 @app.route("/")
 def index():
     return render_template("index.html")
 
-@app.route("/tours/")
-def tours():
-    return render_template("tours.html")
 
 @app.route("/contact")
 def contact():
