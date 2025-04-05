@@ -1,15 +1,17 @@
 {% extends "base.html" %}
 
 {% block main %}
-      <h2>Book your next experience with us</h2>
-      {% for key, value in data.items() %}
-      <h1>{{ product['name'] }}</h1>
-
-  <figure class="figure">
-    <img src="{{ product['image_url']}}" alt="{{ product['description'] }}">
-    <figcaption class="figure-caption">
-      <strong>{{ product['description'] }} - €{{ product['price'] }} (Only {{ product['amount'] }} remaining)</strong>
-    </figcaption>
-  </figure>
+<div class="tours">
+    {% for id, item in tours.items() %}
+        <div class="tours">
+        <img src="{{ item.image_url }}" alt="{{ item.name }}">
+        <h2>{{ item.name }}</h2>
+        <p>{{ item.description }}</p>
+        <p><strong>Price:</strong> €{{ item.price }}</p>
+        <p><strong>Available:</strong> {{ item.amount }}</p>
+    </div>
+    {% endfor %}
+</div>
+    
 
 {% endblock %}
