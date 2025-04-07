@@ -115,3 +115,11 @@ section{
   position: absolute;
   top: 0;
 }
+
+/* tours.html */
+.toursbox{
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  align-items: flex-start;
+}
