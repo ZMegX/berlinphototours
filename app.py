@@ -41,6 +41,10 @@ def index():
 def contact():
     return render_template("contact.html")
 
+@app.route("/order")
+def order_form():
+    return render_template("order.html")
+
 @app.errorhandler(404) 
 def not_found_error(error):
     return render_template('errors/404.html', error=error), 404
