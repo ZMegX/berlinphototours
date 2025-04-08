@@ -26,7 +26,7 @@
 
       observer.observe(el);
     };
-    
+
     let slideIndex = 1;
       showSlides(slideIndex);
 
@@ -54,8 +54,8 @@
         dots[i].className = dots[i].className.replace(" active", "");
       }
       slides[slideIndex-1].style.display = "block";
-      dots[slideIndex-1].className += " active";
-      captionText.innerHTML = dots[slideIndex-1].alt;
+      // dots[slideIndex-1].className += " active";
+      // captionText.innerHTML = dots[slideIndex-1].alt;
     } 
 
     document.addEventListener("keydown", (event) => {
@@ -65,7 +65,6 @@
         plusSlides(-1);
       }
     });
-
 
 //contact form submission event listener
 document.getElementById('contactForm').addEventListener('submit', function (event) {
