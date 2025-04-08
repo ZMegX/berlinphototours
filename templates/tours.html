@@ -11,7 +11,7 @@
                     <p class="card-text">{{ item.description }}</p>
                     <p><strong>Price:</strong> €{{ item.price }}</p>
                     <p><strong>Available seats:</strong> {{ item.amount }}</p>
-                    <a href="#" class="btn btn-primary" type="submit">Go somewhere</a>
+                    <a href="{{ url_for('order_form') }}" class="btn btn-primary" type="submit">Book your ticket</a>
                   </div>
               </div>
               {% endfor %}
