@@ -1,12 +1,32 @@
-function headerImage (){
-    let img = document.createElement('img');
-    img.src = "https://picsum.photos/200/300";
-    document.getElementById('header').appendChild(img);
-    res.innerHTML = "Image Element added.";
+// function headerImage (){
+//     let img = document.createElement('img');
+//     img.src = "https://picsum.photos/200/300";
+//     document.getElementById('header').appendChild(img);
+//     res.innerHTML = "Image Element added.";
 
-} 
+// } 
     //mainhtml code
 
+    const animation_elements = document.querySelectorAll('.animate-on-scroll');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        } else {
+          entry.target.classList.toggle('animate');
+        }
+      })
+    }, {
+      threshold: 0.5
+    });
+
+    for (let i=0; i < animation_elements.length; i++) {
+      const el = animation_elements[i];
+
+      observer.observe(el);
+    };
+    
     let slideIndex = 1;
       showSlides(slideIndex);
 
@@ -45,6 +65,8 @@ function headerImage (){
         plusSlides(-1);
       }
     });
+
+
 //contact form submission event listener
 document.getElementById('contactForm').addEventListener('submit', function (event) {
     event.preventDefault();
