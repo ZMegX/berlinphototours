@@ -150,3 +150,12 @@ section{
   padding: 10px;
   align-items: flex-start;
 }
+
+/* 404.html */
+.error404{
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  flex-direction: column;
+
+}
