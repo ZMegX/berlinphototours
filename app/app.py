@@ -41,9 +41,16 @@ def index():
 def contact():
     return render_template("contact.html")
 
-@app.route("/order")
+@app.route('/order')
 def order_form():
-    return render_template("order.html")
+    return render_template('order.html')
+
+@app.route('/submit', methods=['POST'])
+def submit_order():
+    name = request.form['username']
+    email = request.form['useremail']
+    phone = request.phone['userphone']
+    return render_template('orderReceived.html', name=name, email=email, phone=phone)
 
 @app.errorhandler(404) 
 def not_found_error(error):
