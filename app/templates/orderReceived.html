@@ -2,11 +2,8 @@
 
 {% block main %}
 
-{% if filename%}, thank you for your order!
-{%else}
-
-    <p>Your order could not have been processed, go back to try again.</p>
-{% endif %}
+{{ name }} thank you for your booking!
+a confirmation has been sent to {{ email }}!
 
     <a href="/">Go Back</a>
 {% endblock main %}
