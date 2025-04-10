@@ -5,9 +5,6 @@ from flask import render_template, request, redirect, url_for, session
 
 app = Flask(__name__)
 
-if __name__ == "__main__":
-    app.run()
-
 
 tours = {
     1: {
@@ -51,6 +48,9 @@ def contact():
 def order_form():
     return render_template('order.html')
 
+#when the user clicks on the submit button of the form in the order.html
+#flask is requesting the value below
+#if True the orderReceived.html the user is directed to orderReceived.html
 @app.route('/submit', methods=['POST'])
 def submit_order():
     name = request.form['name']
@@ -66,3 +66,5 @@ def not_found_error(error):
 def internal_error(error):
     return render_template('errors/500.html', error=error), 500
 
+if __name__ == "__main__":
+    app.run()
