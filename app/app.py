@@ -1,7 +1,13 @@
+print("App is being loaded...")
+
 from flask import Flask
 from flask import render_template, request, redirect, url_for, session
 
 app = Flask(__name__)
+
+if __name__ == "__main__":
+    app.run()
+
 
 tours = {
     1: {
@@ -49,12 +55,14 @@ def order_form():
 def submit_order():
     name = request.form['username']
     email = request.form['useremail']
-    phone = request.phone['userphone']
+    phone = request.form['userphone']
     return render_template('orderReceived.html', name=name, email=email, phone=phone)
 
 @app.errorhandler(404) 
 def not_found_error(error):
     return render_template('errors/404.html', error=error), 404
 
+@app.errorhandler(500) 
 def internal_error(error):
     return render_template('errors/500.html', error=error), 500
+
