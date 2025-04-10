@@ -53,9 +53,9 @@ def order_form():
 
 @app.route('/submit', methods=['POST'])
 def submit_order():
-    name = request.form['username']
-    email = request.form['useremail']
-    phone = request.form['userphone']
+    name = request.form['name']
+    email = request.form['email']
+    phone = request.form['phone']
     return render_template('orderReceived.html', name=name, email=email, phone=phone)
 
 @app.errorhandler(404) 
