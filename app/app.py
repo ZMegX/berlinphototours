@@ -18,7 +18,7 @@ tours = {
         "name": "Discover the cityscape in Berlin",
         "description": "Experience the bustling cityscape in Berlin, from the vibrant streets to the serene hills.",
         "price": 30.00,
-        "amount": 10,
+        "amount": 5,
         "image_url": "https://example.com/images/cityscape.jpg"
     },
     3: {
