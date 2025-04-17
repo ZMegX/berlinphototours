@@ -1,20 +1,22 @@
 {% extends "base.html" %}
 
 {% block main %}
-<section>
-  <div class="toursbox">
-              {% for id, item in tours.items() %}
-              <div class="card text-center" style="width: 18rem;">
-                  <img src="{{ item.image_url }}" class="card-img-top" alt="{{ item.name }}">
-                  <div class="card-body">
-                    <h5 class="card-title">{{ item.name }}</h5>
-                    <p class="card-text">{{ item.description }}</p>
-                    <p><strong>Price:</strong> €{{ item.price }}</p>
-                    <p><strong>Available seats:</strong> {{ item.amount }}</p>
-                    <a href="{{ url_for('order_form') }}" class="btn btn-primary" type="submit">Book your ticket</a>
-                  </div>
-              </div>
-              {% endfor %}
+<div class="container overflow-hidden text-center">
+  <div class="row gx-5">
+    {% for id, item in tours.items() %}
+      <div class="col-md-4 mb-4">
+        <div class="card text-center" style="width: 18rem; margin: auto;">
+          <img src="{{ item.image_url }}" class="card-img-top" alt="{{ item.name }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ item.name }}</h5>
+            <p class="card-text">{{ item.description }}</p>
+            <p><strong>Price:</strong> €{{ item.price }}</p>
+            <p><strong>Available seats:</strong> {{ item.amount }}</p>
+            <a href="{{ url_for('order_form') }}" class="btn btn-primary">Book your ticket</a>
           </div>
-</section>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
 {% endblock %}
