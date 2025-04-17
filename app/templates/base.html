@@ -8,16 +8,14 @@
   <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
 </head>
 <body>
-  <div id="wrapper">
+  <div id="wrapper-base">
     <header>
-      <h1>
-        Discover Berlin through your lens
-      </h1>
-      <a href="{{ url_for('index') }}"> Home</a>
     </header>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Photo Tours Berlin</a>
+        <a class="navbar-brand" href="{{ url_for('index') }}">
+            <img src="../static/images/berlin-photo-tours-.png" alt="home">
+          </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
