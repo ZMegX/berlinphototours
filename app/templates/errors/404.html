@@ -1,15 +1,18 @@
 {% extends "base.html" %}
 
 {% block main %}
-<div class="error404">
-    <span class="animate-on-scroll">
-        <img src="../../static/images/404.png" alt="image of a astronaut lost in space">
-    </span>
-    <span class="animate-on-scroll">
-        <div class="404-text">
-            OOPS, Page not found
-        </div>
-    </span>
-
+<div class="container text-center">
+    <div class="row row-cols-2">
+        <div class="col">
+            <span class="animate-on-scroll">
+                <img src="../../static/images/404.png" alt="404, Page not found image of a astronaut lost in space">
+            </span>
+      </div>
+      <div class="col">
+        <span class="animate-on-scroll">
+                OOPS, Page not found
+        </span>
+      </div>
+    </div>
 </div>
 {% endblock %}
