@@ -12,7 +12,7 @@ tours = {
         "description": "Discover the most beautiful street art in Berlin, from local artists to international masters.",
         "price": 25.00,
         "amount": 10,
-        "image_url": "https://i.postimg.cc/651KqHb9/museum-island-berlin.jpg"
+        "image_url": "https://i.postimg.cc/YqVM57jD/IMG-0948.jpg"
     },
     2: {
         "name": "Discover the cityscape in Berlin",
@@ -26,7 +26,7 @@ tours = {
         "description": "Savor the lively nightlife in Berlin, from the charming clubs to the bustling bars.",
         "price": 20.00,
         "amount": 8,
-        "image_url": "https://i.postimg.cc/651KqHb9/museum-island-berlin.jpg"
+        "image_url": "https://i.postimg.cc/rwrMcHrV/nightlife-berlin-tour.jpg"
     }
 
 }
