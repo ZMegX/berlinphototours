@@ -6,7 +6,6 @@
 
 // } 
     //mainhtml code
-
     const animation_elements = document.querySelectorAll('.animate-on-scroll');
 
     const observer = new IntersectionObserver((entries) => {
@@ -26,6 +25,7 @@
 
       observer.observe(el);
     };
+
 
     let slideIndex = 1;
       showSlides(slideIndex);
@@ -53,9 +53,9 @@
       for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
       }
-      // slides[slideIndex-1].style.display = "block";
-      // dots[slideIndex-1].className += " active"; 
-      // captionText.innerHTML = dots[slideIndex-1].alt;
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active"; 
+      captionText.innerHTML = dots[slideIndex-1].alt;
     } 
 
     document.addEventListener("keydown", (event) => {
