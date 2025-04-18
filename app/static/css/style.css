@@ -14,18 +14,25 @@
 
 h2{
   display: flex;
+  flex-direction: row;
+  align-items: center;
   color: #734230;
   text-align: center;
 
 }
 
-.main-wrapper{
+.wrapper-base{
   display: flex;
   align-items: center;
   justify-items: center;
 }
 /* contactform */
+.contact-form-container{
+  width: 80%;
+  padding: 2em;
+}
 .form-group {
+  padding: 10px;
   margin-bottom: 1rem;
 }
 
@@ -56,19 +63,19 @@ textarea {
 }
 
 .submit-button {
-  background-color: #28a745;
+  background-color: #A66844;
   color: white;
   border: none;
   padding: 0.75rem;
   border-radius: 4px;
-  font-size: 1rem;
+  font-size: 1.5rem;
   cursor: pointer;
   width: 100%;
   transition: background-color 0.3s;
 }
 
 .submit-button:hover {
-  background-color: #A66844;
+  background-color: #000000;
 }
 
 /* mainhtml */
@@ -90,13 +97,14 @@ textarea {
 }
 section{
   display: flex;
+  height: auto;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   padding-top: 3em;
 
 }
-.mySlides-main {
+.mySlides {
   display: none;
 }
 
@@ -158,4 +166,12 @@ section{
   align-content: center;
   flex-direction: column;
 
+}
+h1{
+  font-family: "agency-fb", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+footer{
+  padding-top: 5em;
 }
