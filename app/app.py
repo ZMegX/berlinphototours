@@ -8,23 +8,23 @@ app = Flask(__name__)
 
 tours = {
     1: {
-        "name": "Discover the street art in Berlin",
+        "name": "Street art in Berlin",
         "description": "Discover the most beautiful street art in Berlin, from local artists to international masters.",
-        "price": 25.00,
+        "price": 4.99,
         "amount": 10,
         "image_url": "https://i.postimg.cc/YqVM57jD/IMG-0948.jpg"
     },
     2: {
-        "name": "Discover the cityscape in Berlin",
+        "name": "The cityscape in Berlin",
         "description": "Experience the bustling cityscape in Berlin, from the vibrant streets to the serene hills.",
-        "price": 30.00,
+        "price": 2.99,
         "amount": 5,
         "image_url": "https://i.postimg.cc/651KqHb9/museum-island-berlin.jpg"
     },
     3: {
-        "name": "Discover the nightlife in Berlin",
+        "name": "Nightlife in Berlin",
         "description": "Savor the lively nightlife in Berlin, from the charming clubs to the bustling bars.",
-        "price": 20.00,
+        "price": "9.99",
         "amount": 8,
         "image_url": "https://i.postimg.cc/rwrMcHrV/nightlife-berlin-tour.jpg"
     }
