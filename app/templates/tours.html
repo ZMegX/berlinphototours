@@ -15,8 +15,8 @@
               <h5 class="card-title">{{ item.name }}</h5>
               <p class="card-text">{{ item.description }}</p>
               <p><strong>Price:</strong> € {{ item.price }}</p>
-              <p><strong>Tickets left:</strong> {{ item.amount }}</p>
-              <a href="{{ url_for('order_form') }}" class="btn btn-primary">Book</a>
+              <p hidden><strong>Tickets left:</strong> {{ item.amount }}</p>
+              <a href="{{ url_for('order_form') }}" class="btn btn-primary">Book now</a>
             </div>
           </div>
         </div>
