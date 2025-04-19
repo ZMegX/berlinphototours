@@ -1,15 +1,22 @@
+{% extends "base.html" %}
+
 {% block main %}
-<div class="container text-center">
-    <div class="row row-cols-2">
-        <div class="col">
+<section>
+  <h1>Error 500, Who ate the cable? We are workig on it and we'll be back soon. Check out our webpage later...</h1>
+</section>
+<div class="row gx-5 align-items-center justify-content-around">
+  <div class="col align-self-center p-3">
+      <div class="container text-center">
             <span class="animate-on-scroll">
-                <img src="..." alt="500, Do not worry we already are working on it">
+                <img src="../../static/images/error500.webp" alt="404, Page not found image of a astronaut lost in space">
             </span>
       </div>
-      <div class="col">
-        <span class="animate-on-scroll">
-          Who ate the cable? 500, we'll be back soon. Check out our webpage later...
-        </span>
+      <div class="col align-self-center p-5">
+        <div class="container text-center">
+          <span class="animate-on-scroll">
+              <a href="{{ url_for('index') }}" class="btn btn-primary">Home</a>
+            </span>
+        </div>
       </div>
     </div>
 </div>
