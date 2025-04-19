@@ -79,7 +79,7 @@ if (contactForm) {
     event.preventDefault();
     const isValid = validateForm('contact', ['Name', 'Email', 'Phone', 'Message']);
     if (isValid) {
-      alert('Contact form submitted!');
+      alert('Your message has been sent!');
     }
   });
 }
@@ -87,10 +87,9 @@ if (contactForm) {
 const orderForm = document.getElementById('orderForm');
 if (orderForm) {
   orderForm.addEventListener('submit', function (event) {
-    event.preventDefault();
     const isValid = validateForm('order', ['Name', 'Email', 'Phone']);
-    if (isValid) {
-      alert('Order form submitted!');
+    if (!isValid) {
+      event.preventDefault(); // prevent submission only if invalid
     }
   });
 }
