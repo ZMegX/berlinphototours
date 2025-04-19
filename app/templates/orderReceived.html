@@ -1,22 +1,31 @@
 {% extends "base.html" %}
 
 {% block main %}
+<section>
+    <h1>Bravo, get ready for your next experience</h1>
+  </section>
 <div class="container text-center">
     <div class="row align-items-center">
-      <div class="col sm-12 md-6 lg-6">
-        <div class="tenor-gif-embed" data-postid="13684011490947959172" data-share-method="host" data-aspect-ratio="1" data-width="100%">
+      <div class="col sm-12 md-6 lg-6 p-5">
+        <div class="tenor-gif-embed" data-postid="13684011490947959172" data-share-method="host" data-aspect-ratio="1" data-width="50%">
             <a href="https://tenor.com/view/mr-bean-thumbs-up-gif-13684011490947959172">Mr Bean Thumbs Up GIF</a>from 
                 <a href="https://tenor.com/search/mr+bean-gifs">Mr Bean GIFs</a>
             </div>
         </div>
-        <div class="col sm-12 md-6 lg-6">
+        <div class="col sm-12 md-6 lg-6 p-5">
             <span class="animed-on-scroll">
-            {{ name }} thank you for your booking!
+                {{ name }} thank you for your booking!
+            </span>
+            <span class="animed-on-scroll">
                 A confirmation has been sent to {{ email }}!
             </span>
-            <span class="animate-on-scroll">
-                <a href="/">Home</a>
-            </span>
+            <div class="col align-self-center p-5">
+                <div class="container text-center">
+                  <span class="animate-on-scroll">
+                      <a href="{{ url_for('index') }}" class="btn btn-primary">Home</a>
+                    </span>
+                </div>
+            </div>
         </div>
     </div>
 </div>
