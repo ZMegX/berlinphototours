@@ -30,99 +30,63 @@
 //contact form submission event listener
 document.getElementById('contactForm').addEventListener('submit', function (event) {
   event.preventDefault();
-  
-  // Clear previous errors
-  const errorElements = document.querySelectorAll('.error-message');
-  errorElements.forEach(el => el.style.display = 'none');
-  
-  // Get form values
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const phone = document.getElementById('phone').value.trim();
-  const message = document.getElementById('message').value.trim();
-  
-  // Validation flags
-  let isValid = true;
-  
-  // Name validation
-  if (name === '') {
-      document.getElementById('nameError').textContent = 'Name is required';
-      document.getElementById('nameError').style.display = 'block';
-      isValid = false;
-  }
-  
-  // Email validation
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (email === '' || !emailPattern.test(email)) {
-      document.getElementById('emailError').textContent = 'Valid email is required';
-      document.getElementById('emailError').style.display = 'block';
-      isValid = false;
-  }
-  
-  // Phone validation
-  const phonePattern = /^[0-9]{10}$/;
-  if (phone === '' || !phonePattern.test(phone)) {
-      document.getElementById('phoneError').textContent = 'Valid phone number is required';
-      document.getElementById('phoneError').style.display = 'block';
-      isValid = false;
-  }
-  
-  // Message validation
-  if (message === '') {
-      document.getElementById('messageError').textContent = 'Message is required';
-      document.getElementById('messageError').style.display = 'block';
-      isValid = false;
-  }
-  
-  // If form is valid, you can submit it or perform any other action
+
+  const isValid = validateForm('contact', ['Name', 'Email', 'Phone', 'Message']);
   if (isValid) {
-      alert('Form submitted successfully!');
+    alert('Contact form submitted!');
   }
+});
+
+document.getElementById('orderForm').addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  const isValid = validateForm('order', ['Name', 'Email', 'Phone']);
+  if (isValid) {
+    alert('Order form submitted!');
+  }
+});
+
+function validateForm(formId, fields) {
+  let isValid = true;
+
+  // Clear previous errors
+  fields.forEach(field => {
+    const errorEl = document.getElementById(`${formId}${field}Error`);
+    if (errorEl) errorEl.style.display = 'none';
   });
 
-  document.getElementById('orderForm').addEventListener('submit', function (event) {
-    event.preventDefault();
-    
-    // Clear previous errors
-    const errorElements = document.querySelectorAll('.error-message');
-    errorElements.forEach(el => el.style.display = 'none');
-    
-    // Get form values
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const phone = document.getElementById('phone').value.trim();
+  // Loop through fields and validate
+  fields.forEach(field => {
+    const input = document.getElementById(`${formId}${field}`);
+    const value = input.value.trim();
+    const errorEl = document.getElementById(`${formId}${field}Error`);
 
-    // Validation flags
-    let isValid = true;
-    
-    // Name validation
-    if (name === '') {
-        document.getElementById('nameError').textContent = 'Name is required';
-        document.getElementById('nameError').style.display = 'block';
-        isValid = false;
-    }
-    
-    // Email validation
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (email === '' || !emailPattern.test(email)) {
-        document.getElementById('emailError').textContent = 'Valid email is required';
-        document.getElementById('emailError').style.display = 'block';
-        isValid = false;
-    }
-    
-    // Phone validation
-    const phonePattern = /^[0-9]{10}$/;
-    if (phone === '' || !phonePattern.test(phone)) {
-        document.getElementById('phoneError').textContent = 'Valid phone number is required';
-        document.getElementById('phoneError').style.display = 'block';
-        isValid = false;
+    if (value === '') {
+      errorEl.textContent = `${field.charAt(0).toUpperCase() + field.slice(1)} is required`;
+      errorEl.style.display = 'block';
+      isValid = false;
+      return;
     }
 
-    
-    // If form is valid, you can submit it or perform any other action
-    if (isValid) {
-        alert('orderForm submitted successfully!');
+    if (field === 'Email') {
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(value)) {
+        errorEl.textContent = 'Valid email is required';
+        errorEl.style.display = 'block';
+        isValid = false;
+      }
     }
-    });
 
+    if (field === 'Phone') {
+      const phonePattern = /^[0-9]{10}$/;
+      if (!phonePattern.test(value)) {
+        errorEl.textContent = 'Valid phone number is required';
+        errorEl.style.display = 'block';
+        isValid = false;
+      }
+    }
+  });
+
+  return isValid;
+}
 
