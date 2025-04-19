@@ -28,23 +28,7 @@
     };
 
 //contact form submission event listener
-document.addEventListener('DOMContentLoaded', function () {
-  document.getElementById('contactForm').addEventListener('submit', function (event) {
-    event.preventDefault();
-    const isValid = validateForm('contact', ['Name', 'Email', 'Phone', 'Message']);
-    if (isValid) {
-      alert('Contact form submitted!');
-    }
-  });
 
-  document.getElementById('orderForm').addEventListener('submit', function (event) {
-    event.preventDefault();
-    const isValid = validateForm('order', ['Name', 'Email', 'Phone']);
-    if (isValid) {
-      alert('Order form submitted!');
-    }
-  });
-});
 function validateForm(formId, fields) {
   let isValid = true;
 
@@ -88,5 +72,26 @@ function validateForm(formId, fields) {
 
   return isValid;
 }
+// as the form are on two different webpages I use a if statement
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    const isValid = validateForm('contact', ['Name', 'Email', 'Phone', 'Message']);
+    if (isValid) {
+      alert('Contact form submitted!');
+    }
+  });
+}
 
+const orderForm = document.getElementById('orderForm');
+if (orderForm) {
+  orderForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    const isValid = validateForm('order', ['Name', 'Email', 'Phone']);
+    if (isValid) {
+      alert('Order form submitted!');
+    }
+  });
+}
 
